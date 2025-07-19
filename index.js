@@ -34,6 +34,13 @@ function navigateToHome() {
     window.location.href = '/';
 }
 
+function navigateToPage(pageName) {
+    if (pageName === 'contact') {
+        window.location.href = '/contact.html'; // Use relative path instead
+    } else {
+        window.open(pageName + ".html", '_blank');
+    }
+}
 
 // FOR TOGGLE MENU
 
