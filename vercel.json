@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "api/send-telegram.js": {
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/send-telegram",
+      "destination": "/api/send-telegram.js"
+    }
+  ]
+}
