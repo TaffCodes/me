@@ -9,5 +9,7 @@
       "source": "/api/send-telegram",
       "destination": "/api/send-telegram.js"
     }
-  ]
+  ],
+  "cleanUrls": true,
+  "trailingSlash": false
 }

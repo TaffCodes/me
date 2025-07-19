@@ -1,4 +1,6 @@
-const axios = require('axios');
+// Remove: const axios = require('axios');
+// Replace with:
+import axios from 'axios';
 
 export default async function handler(req, res) {
     // Enable CORS
@@ -26,7 +28,7 @@ export default async function handler(req, res) {
         }
 
         const telegramMessage = `
-🔔 *From Personal Website*
+🔔 *New Contact Form Submission*
 
 👤 *Name:* ${name}
 📧 *Email:* ${email}
@@ -48,7 +50,7 @@ ${message}
             });
         }
 
-        res.json({ 
+        res.status(200).json({ 
             success: true, 
             message: 'Message sent successfully!' 
         });
