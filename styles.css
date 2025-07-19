@@ -1582,6 +1582,196 @@ marquee{
     }
 }
 
+/* CV SECTION */
+.cv-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.cv-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cv-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #F5F5DC;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.cv-header p {
+    color: rgba(245, 245, 220, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cv-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.cv-download-btn {
+    background: linear-gradient(135deg, #138B84, #0C5450) !important;
+    border: 2px solid #138B84 !important;
+}
+
+.cv-download-btn:hover {
+    background: linear-gradient(135deg, #0C5450, #073c3a) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(19, 139, 132, 0.3);
+}
+
+.cv-container {
+    background: #0C5450;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(245, 245, 220, 0.1);
+}
+
+.cv-viewer {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    min-height: 700px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 2px rgba(245, 245, 220, 0.1);
+    background: #0C5450;
+    transition: all 0.3s ease;
+}
+
+.cv-viewer.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    border-radius: 0;
+    min-height: 100vh;
+    background: #0C5450;
+}
+
+.cv-viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: #0C5450;
+}
+
+.pdf-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: #0C5450;
+    color: #F5F5DC;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.pdf-fallback h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #F5F5DC;
+}
+
+.pdf-fallback p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: rgba(245, 245, 220, 0.8);
+    line-height: 1.6;
+}
+
+.fallback-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Mobile Responsive for CV */
+@media (max-width: 768px) {
+    .cv-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .cv-header p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+    
+    .cv-container {
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .cv-viewer {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .cv-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cv-actions .repository-button {
+        width: 200px;
+        justify-content: center;
+    }
+    
+    .fallback-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .fallback-actions .repository-button {
+        width: 200px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cv-header h1 {
+        font-size: 2rem;
+    }
+    
+    .cv-viewer {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .cv-container {
+        padding: 15px;
+        margin: 0 5px;
+    }
+    
+    .pdf-fallback {
+        padding: 20px 10px;
+    }
+    
+    .pdf-fallback h3 {
+        font-size: 1.2rem;
+    }
+    
+    .pdf-fallback p {
+        font-size: 1rem;
+    }
+}
+
 @media (max-width:480px) {
     .footer p{
         font-size:12px;

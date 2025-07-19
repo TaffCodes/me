@@ -4,10 +4,71 @@
       "maxDuration": 10
     }
   },
+  "redirects": [
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/smartlostnfound.html",
+      "destination": "/smartlostnfound",
+      "permanent": true
+    },
+    {
+      "source": "/verifier.html",
+      "destination": "/verifier",
+      "permanent": true
+    },
+    {
+      "source": "/solara.html",
+      "destination": "/solara",
+      "permanent": true
+    },
+    {
+      "source": "/fundmanage.html",
+      "destination": "/fundmanage",
+      "permanent": true
+    },
+    {
+      "source": "/credits.html",
+      "destination": "/credits",
+      "permanent": true
+    },
+    {
+      "source": "/cv.html",
+      "destination": "/cv",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/contact",
       "destination": "/contact.html"
+    },
+    {
+      "source": "/smartlostnfound",
+      "destination": "/smartlostnfound.html"
+    },
+    {
+      "source": "/verifier",
+      "destination": "/verifier.html"
+    },
+    {
+      "source": "/solara",
+      "destination": "/solara.html"
+    },
+    {
+      "source": "/fundmanage",
+      "destination": "/fundmanage.html"
+    },
+    {
+      "source": "/credits",
+      "destination": "/credits.html"
+    },
+    {
+      "source": "/cv",
+      "destination": "/cv.html"
     }
   ],
   "headers": [

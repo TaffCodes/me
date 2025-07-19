@@ -27,19 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // NAVIGATION FUNCTIONS
 function navigateToPage(pageName) {
-    window.open(pageName +".html", '_blank');
+    // Define pages that should open in the same window (without .html extension)
+    const sameWindowPages = ['contact', 'smartlostnfound', 'verifier', 'solara', 'fundmanage', 'credits', 'cv'];
+    
+    if (sameWindowPages.includes(pageName)) {
+        window.location.href = `/${pageName}`; // Clean URL without .html
+    } else {
+        window.open(pageName + ".html", '_blank');
+    }
 }
 
 function navigateToHome() {
     window.location.href = '/';
-}
-
-function navigateToPage(pageName) {
-    if (pageName === 'contact') {
-        window.location.href = '/contact.html'; // Use relative path instead
-    } else {
-        window.open(pageName + ".html", '_blank');
-    }
 }
 
 // FOR TOGGLE MENU
