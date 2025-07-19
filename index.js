@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // NAVIGATION FUNCTIONS
 function navigateToPage(pageName) {
-    window.open(pageName +."html", '_blank');
+    window.open(pageName +".html", '_blank');
 }
 
 function navigateToHome() {
