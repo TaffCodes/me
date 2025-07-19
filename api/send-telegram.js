@@ -1,7 +1,4 @@
-// Remove: const axios = require('axios');
-// Replace with:
-import axios from 'axios';
-
+// Use dynamic import instead of ES6 import for better Vercel compatibility
 export default async function handler(req, res) {
     // Enable CORS
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -18,6 +15,9 @@ export default async function handler(req, res) {
     }
 
     try {
+        // Dynamic import for better Vercel compatibility
+        const { default: axios } = await import('axios');
+        
         const { name, email, subject, message } = req.body;
 
         if (!name || !email || !subject || !message) {
@@ -40,26 +40,36 @@ ${message}
 📅 *Received:* ${new Date().toLocaleString()}
         `.trim();
 
-        if (process.env.TELEGRAM_BOT_TOKEN && process.env.TELEGRAM_CHAT_ID) {
-            const telegramUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
-            
-            await axios.post(telegramUrl, {
-                chat_id: process.env.TELEGRAM_CHAT_ID,
-                text: telegramMessage,
-                parse_mode: 'Markdown'
+        // Check if Telegram credentials are available
+        if (!process.env.TELEGRAM_BOT_TOKEN || !process.env.TELEGRAM_CHAT_ID) {
+            console.log('Telegram credentials not configured');
+            return res.status(200).json({ 
+                success: true, 
+                message: 'Message received (Telegram not configured)' 
             });
         }
 
-        res.status(200).json({ 
+        const telegramUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
+        
+        const response = await axios.post(telegramUrl, {
+            chat_id: process.env.TELEGRAM_CHAT_ID,
+            text: telegramMessage,
+            parse_mode: 'Markdown'
+        });
+
+        console.log('Telegram API response:', response.status);
+
+        return res.status(200).json({ 
             success: true, 
             message: 'Message sent successfully!' 
         });
 
     } catch (error) {
-        console.error('Error:', error);
-        res.status(500).json({ 
+        console.error('Error details:', error.response?.data || error.message);
+        
+        return res.status(500).json({ 
             success: false, 
-            error: 'Failed to send message' 
+            error: 'Failed to send message: ' + (error.response?.data?.description || error.message)
         });
     }
 }
