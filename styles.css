@@ -1777,3 +1777,28 @@ marquee{
         font-size:12px;
     }
 }
+
+/* Rounded favicon when displayed in content */
+.favicon-rounded {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+}
+
+/* For any favicon images in your content */
+img[src*="favicon"] {
+    border-radius: 50%;
+}
+
+/* Make any favicon references in your site appear rounded */
+link[rel="icon"],
+link[rel="apple-touch-icon"],
+link[rel="shortcut icon"] {
+    border-radius: 50% !important;
+}
+
+/* If you display favicon anywhere in your content */
+.site-favicon {
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
