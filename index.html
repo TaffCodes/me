@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Ray Basweti - Software Developer">
+    <meta name="keywords" content="Software Developer, Portfolio, Web Development, Ray Basweti">
+    <meta name="author" content="Ray Basweti">
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+    <script src="index.js" defer></script>
+    <script src="https://kit.fontawesome.com/cb5d439dd3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    
+    <script>
+        AOS.init();
+    </script>
+
+    <title>Ray Basweti</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" data-aos="fade-down" data-aos-duration="3000">
+        <div class="logo">
+            <a href="/" onclick="navigateToHome()"><h4>RAY <span class="dot">.</span></h4></a>
+        </div>
+        <div class="toggle" id="toggle">
+           <span class="toggle-btn"></span>
+        </div>
+        <div class="menu" id="menu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/#home" id="home-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about-me" id="about-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#skills" id="skills-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#my-projects" id="projects-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#education" id="education-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#experience" id="experience-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact" id="contact-link">Contact</a>
+                </li>
+        
+            </ul>
+        </div>
+    </nav> 
+
+    <div class=" hero-section" id="home" data-aos="fade-down" data-aos-duration="3000">
+        <div class="hero-avatar">
+            <img src="images/RAY_AVATAR.png" alt="hero-avatar" width="300px" height="300px">
+        </div>
+        <div class="hero-text">
+            <h1>RAY BASWETI</h1>
+            <p>Software Developer</p>
+        </div>
+        <div class="hero-socials">
+            <a href="https://www.linkedin.com/in/raybasweti/" target="_blank"><i class="fa-brands fa-linkedin  fa-lg" style="color:#fff;"></i></a>
+            <a href="https://x.com/TaffCodes"  target="_blank"><i class="fa-brands  fa-square-x-twitter fa-lg" style="color: #fff;"></i></a>
+            <a href="https://github.com/TaffCodes"  target="_blank"><i class="fa-brands fa-github fa-lg" style="color: #fff;"></i></a>
+            <a href="mailto:ray@paymentsoverflow.com?subject=Contact%20Request"  target="_blank"><i class="fa-solid fa-envelope fa-lg" style="color: #fff;"></i></a>
+        </div>
+    </div>
+
+    <div class="container portfolio-details"  data-aos="fade-up" data-aos-duration="3000">
+        <div class="main-body">
+            <h1 class="heading" id="about-me">About Me</h1>
+            <div class="about-me-body">
+                <div class="about-me-description">
+                    <p>Hi there! I'm Ray, a developer with 
+                        the niche to develop comprehensive
+                        and all-round systems. I'm passionate
+                        about building products that truly
+                         work and serve the needs of the users. 
+                        Besides code, I ride bikes and explore the outdoors.
+                    </p>
+                    <div class="contact-form-link" style="text-align: center; margin-top: 40px;">
+                    <button class="repository-button" onclick="navigateToPage('contact')">
+                        <i class="fab fa-telegram-plane"></i>
+                        Hire Me
+                    </button>
+                </div>
+                </div>
+                
+            </div>
+
+            <div class="skills-container" id="skills" data-aos="fade-up" data-aos-duration="3000">
+                <h1 class="heading">Skills</h1>
+                <div class="skills-body">
+
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-gears fa-lg" style="color: #F5F5DC;"></i>      
+                        </div>
+                                          
+                        <div class="skill-description" data-aos="fade-up" data-aos-duration="400">
+                            <h5>Backend</h5>
+                            <p>Python(Django), Javascript</p>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-desktop fa-lg" style="color: #F5F5DC;"></i>   
+                        </div>
+                                             
+                        <div class="skill-description" data-aos="fade-up" data-aos-duration="400">
+                            <h5>Frontend</h5>
+                            <p>HTML, CSS, Bootstrap</p>
+
+                        </div>
+                    </div>
+
+                    
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-robot fa-lg" style="color: #F5F5DC;"></i>
+                        </div>
+                        <div class="skill-description" data-aos="fade-up" data-aos-duration="400">
+                            <h5>Artificial Intelligence</h5>
+                            <p>Machine Learning, NLP, Generative AI</p>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-cloud fa-lg" style="color: #F5F5DC;"></i>
+                        </div>
+                        <div class="skill-description" data-aos="fade-up" data-aos-duration="400">
+                            <h5>Cloud</h5>
+                            <p>AWS, Google Cloud</p>
+                        </div>
+                    </div>
+
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-chart-line fa-lg" style="color: #F5F5DC;"></i>
+                        </div>
+                        <div class="skill-description" data-aos="fade-up" data-aos-duration="400">
+                            <h5>Data Analytics</h5>
+                            <p>Python(Pandas), Power BI, SQL</p>
+                        </div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-icon">
+                            <i class="fa-solid fa-pen-ruler fa-lg" style="color: #F5F5DC;"></i>                        
+                        </div>
+                        <div class="skill-description" data-aos="fade-up" data-aos-duration="400">
+                            <h5>UI Design</h5>
+                            <p>Figma, Adobe Photoshop, Canva</p>
+                        </div>
+                    </div>
+
+                    
+
+                    
+
+                </div>
+                <div class="soft-skills" data-aos="fade-up" data-aos-duration="400">
+                    <ul>
+                        <li> Problem solving</li>
+                        <li> Collaboration</li>
+                        <li> Communication</li>
+                        <li> Critical Thinking</li>
+
+                    </ul>
+                    
+                </div>
+            </div>
+
+            <div class="my-projects" id="my-projects" data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="heading">My Projects</h1>
+                <div class="project-container">
+                    <div class="project" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="project-details">
+                            <div class="project-name">
+                                <h5>Project Name:</h5>
+                                <p><em>AI Powered Lost 'n Found Matching Platform</em></p>
+                            </div>
+                            <div class="project-image-container">
+                                <img src="images/SmartLostnFound.png" alt="artisanalley-image" class="project-image">  
+                            </div>
+                            <div class="project-description">
+                                <h5>About:</h5>
+                                <p><em>Connects recovered items with their owners using computer vision</em>
+                                </p>
+                                <button class="repository-button" onclick="navigateToPage('smartlostnfound.html')">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="project-details">
+                            <div class="project-name">
+                                <h5>Project Name:</h5>
+                                <p><em>ChainVerify</em></p>
+                            </div>
+                            <div class="project-image-container">
+                                <img src="images/VERIFIER.png" alt="verifier-image" class="project-image">  
+                            </div>
+                            <div class="project-description">
+                                <h5>About:</h5>
+                                <p><em>A cryptographically secure product verification platform</em>
+                                </p>
+                                <button class="repository-button" onclick="navigateToPage('verifier.html')">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project" data-aos="fade-up" data-aos-duration="2000">
+                        <div class="project-details">
+                            <div class="project-name">
+                                <h5>Project Name:</h5>
+                                <p><em>Solara</em></p>
+                            </div>
+                            <div class="project-image-container">
+                                <img src="images/4.png" alt="solara-image" class="project-image solara">  
+                            </div>
+                            <div class="project-description">
+                                <h5>About:</h5>
+                                <p><em>An AI-Powered Mental 
+                                    Health Platform for Students</em>
+                                </p>
+                                <button class="repository-button" onclick="navigateToPage('solara.html')">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project" data-aos="fade-up" data-aos-duration="2500">
+                        <div class="project-details">
+                            <div class="project-name">
+                                <h5>Project Name:</h5>
+                                <p><em>FundManage</em></p>
+                            </div>
+                            <div class="project-image-container">
+                                <img src="images/FundManage Placeholder.png" alt="fundmanage-image" class="project-image">  
+                            </div>
+                            <div class="project-description">
+                                <h5>About:</h5>
+                                <p><em>A Digital Investment Platform with Client Management Features</em>
+                                </p>
+                                <button class="repository-button" onclick="navigateToPage('fundmanage.html')">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-container" id="education" data-aos="fade-up" data-aos-duration="3000" style="display: flex; flex-direction: column; align-items: center;">
+                <h1 class="heading" style="text-align: center;">Education</h1>
+                <div class="education-details" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
+                        <h5 class="year">Oct 2024 - June 2025</h5>
+                        <p>Software Development 
+                            <br>at 
+                            <br>Power Learn Project(PLP)
+                        </p>
+                    </div>
+                    <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
+                        <h5 class="year">Sept 2021 - Apr 2025</h5>
+                        <p>Bachelor of Science in Computer
+                            Science at Chuka University
+                        </p>
+                    </div>
+                    <div class="education-properties" data-aos="fade-right" data-aos-duration="400">
+                        <h5 class="year">Sept 2021 - April 2022</h5>
+                        <p>Introduction to Quantum Computing at 
+                            <br>The Coding School
+                        </p>
+                    </div>
+                </div>    
+            </div>
+
+            <div class="experience" id="experience" data-aos="fade-up" data-aos-duration="3000">
+                <h1 class="heading">Experience</h1>
+                <div class="experience-item">
+                    <h3>Software Developer Intern</h3>
+                    <p><strong>Greenspoon LTD 
+                        <br>May 2024 - Sept 2024</strong></p>   
+                </div>
+
+                <div class="experience-item">
+                    <h3>Brand Manager</h3>
+                    <p><strong>Digimatt Solutions 
+                        <br>Jan 2022 - Apr 2022</strong></p>   
+                </div>
+            </div>
+
+            <div class="contact" id="contact" data-aos="fade-up" data-aos-duration="3000">
+                <marquee class="heading" scroll-behaviour="smooth"> 
+                    <p><strong>Get In Touch</strong></p> 
+                </marquee>
+                <div class="contact-info">
+                    <div class="contact-detail">
+                        <i class="fa-solid  fa-phone" style="color: #fff;"></i>
+                            <p>+254 112 471 292</p>
+                        </a>
+                    </div>
+
+                    <div class="contact-detail">
+                        <a href="https://www.linkedin.com/in/raybasweti/" target="_blank"><i class="fa-brands fa-linkedin  fa-lg" style="color:#fff;"></i>
+                            <p>Ray Basweti</p>
+                        </a>
+                        
+                    </div>
+
+                    <div class="contact-detail">
+                        <a href="https://x.com/taffcodes"  target="_blank"><i class="fa-brands  fa-square-x-twitter fa-lg" style="color: #fff;"></i>
+                            <p>Ray ⚡</p>
+                        </a>
+
+                    </div>
+
+                    <div class="contact-detail">
+                        <a href="https://github.com/TaffCodes"  target="_blank"><i class="fa-brands fa-github fa-lg" style="color: #fff;"></i>
+                            <p>TaffCodes</p>
+                        </a>
+
+                    </div>
+
+                    <div class="contact-detail">
+                        <a href="mailto:ray@paymentsoverflow.com?subject=Contact%20Request"  target="_blank"><i class="fa-solid fa-envelope fa-lg" style="color: #fff;"></i>
+                            <p>ray@paymentsoverflow.com</p>
+                        </a>
+
+                    </div>
+                </div>
+                
+                <div class="contact-form-link" style="text-align: center; margin-top: 40px;">
+                    <button class="repository-button" onclick="navigateToPage('contact')">
+                        <i class="fab fa-telegram-plane"></i>
+                        Send me a message
+                    </button>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>&copy; <span id="year"></span> Ray Basweti</p>
+                <p><a href="/credits" >Credits with 💚 </a></p>
+                <script>
+                    document.getElementById('year').textContent = new Date().getFullYear();
+                </script>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

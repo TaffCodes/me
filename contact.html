@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Ray Basweti - Contact Me">
+    <meta name="keywords" content="Contact, Ray Basweti, Software Developer">
+    <meta name="author" content="Ray Basweti">
+
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+
+    <script src="index.js" defer></script>
+    <script src="https://kit.fontawesome.com/cb5d439dd3.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    
+    <script>
+        AOS.init();
+    </script>
+
+    <title>Contact - Ray Basweti</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg" data-aos="fade-down" data-aos-duration="3000">
+        <div class="logo">
+            <a href="/"><h4>RAY <span class="dot">.</span></h4></a>
+        </div>
+        <div class="toggle" id="toggle">
+           <span class="toggle-btn"></span>
+        </div>
+        <div class="menu" id="menu">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/#home" id="home-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about-me" id="about-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#skills" id="skills-link">Skills</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#my-projects" id="projects-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#education" id="education-link">Education</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#experience" id="experience-link">Experience</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact" id="contact-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container contact-container" style="margin-top: 100px;">
+        <div class="contact-page" data-aos="fade-up" data-aos-duration="3000">
+            <div class="contact-header">
+                <h1>Get In Touch</h1>
+                <p>I'd love to hear from you! Send me a message and I'll respond as soon as possible.</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-form-container">
+                    <h2>Send me a message</h2>
+                    <form id="contactForm" class="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="hello@example.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Tell me more about your project or inquiry..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+                                <i class="fab fa-telegram-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+
+                    <div id="responseMessage" class="response-message"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; <span id="year"></span> Ray Basweti, All rights reserved.</p>
+            <script>
+                document.getElementById('year').textContent = new Date().getFullYear();
+            </script>
+        </div>
+    </div>
+
+    <script>
+        // Contact form handling with Telegram Bot integration
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('.submit-btn');
+            const responseMessage = document.getElementById('responseMessage');
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Send to your backend endpoint that handles Telegram bot
+                const response = await fetch('/api/send-telegram', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    responseMessage.innerHTML = '<div class="success-message"><i class="fas fa-check-circle"></i> Message sent successfully! I\'ll get back to you soon.</div>';
+                    this.reset();
+                } else {
+                    throw new Error('Failed to send message');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                responseMessage.innerHTML = '<div class="error-message"><i class="fas fa-exclamation-circle"></i> Failed to send message. Please try again or contact me directly via email.</div>';
+            } finally {
+                // Reset button
+                submitBtn.innerHTML = '<i class="fab fa-telegram-plane"></i> Send Message';
+                submitBtn.disabled = false;
+            }
+        });
+
+        // Add some interactive feedback
+        document.querySelectorAll('.form-group input, .form-group textarea').forEach(field => {
+            field.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            field.addEventListener('blur', function() {
+                if (this.value === '') {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
