@@ -6,8 +6,19 @@
   },
   "rewrites": [
     {
-      "source": "/api/send-telegram",
-      "destination": "/api/send-telegram.js"
+      "source": "/contact",
+      "destination": "/contact.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
     }
   ],
   "cleanUrls": true,
